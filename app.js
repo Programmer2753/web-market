@@ -1,14 +1,21 @@
-const select = document.getElementById('language');
-const wrapper = document.querySelector('.language-selection');
+document.addEventListener('DOMContentLoaded', () => {
+    const select = document.getElementById('language');
+    const wrapper = document.querySelector('.language-selection');
 
-select.addEventListener('click', () => {
-    wrapper.classList.toggle('open');
-});
+    if (!select || !wrapper) return;
 
-select.addEventListener('blur', () => {
-    wrapper.classList.remove('open');
-});
+    // открытие списка
+    select.addEventListener('mousedown', () => {
+        wrapper.classList.add('open');
+    });
 
-select.addEventListener('change', () => {
-    wrapper.classList.remove('open');
+    // выбор значения
+    select.addEventListener('change', () => {
+        wrapper.classList.remove('open');
+    });
+
+    // закрытие без выбора (клик мимо / ESC)
+    select.addEventListener('blur', () => {
+        wrapper.classList.remove('open');
+    });
 });

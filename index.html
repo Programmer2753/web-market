@@ -9,6 +9,75 @@
 </head>
 <body>
     <script src="app.js"></script>
+
+
+    <div class="modal-overlay-log">
+        <div class="modal">
+            <span class="close-btn">✕</span>
+        <h2>Увійти в акаунт</h2>
+            <a class="google-btn" href="">
+            <img src="https://www.gstatic.com/images/branding/product/1x/gsa_64dp.png" width="20" id="continueGoogle">
+            Продовжити з Google
+            </a>
+        <div class="divider" id="ort-log">або</div>
+
+        <input type="email" class="email-input" id="loginEmail" placeholder="ЕЛЕКТРОННА ПОШТА">
+        <input type="password" class="email-input" id="loginPassword" placeholder="ПАРОЛЬ">
+
+        <button class="email-btn" id="loginButton">
+            <span class="arrow">→</span>
+            <span class="txt">Увійти</span>
+        </button>
+        <p class="dop-links"><a href="" id="resetPasswordLink">Забули пароль?</a></p>
+        <p class="dop-links">
+            <span class="pre-link-text-log">Немає акаунту? </span>
+            <a href="" id="switchToRegister">Створити акаунт</a>
+        </p>
+        </div>
+    </div>
+
+    <div class="modal-overlay-start">
+        <div class="modal">
+            <span class="close-btn">✕</span>
+        <h2>Створити акаунт</h2>
+            <a class="google-btn" href="">
+            <img src="https://www.gstatic.com/images/branding/product/1x/gsa_64dp.png" width="20" id="continueGoogle">
+            Продовжити з Google
+            </a>
+        <div class="divider" id="ort-reg">або</div>
+
+        <input type="email" class="email-input" id="regEmail" placeholder="ЕЛЕКТРОННА ПОШТА">
+        <input type="password" class="email-input" id="regPassword" placeholder="ПАРОЛЬ">
+        <input type="password" class="email-input" id="regConfirmPassword" placeholder="ПІДТВЕРДІТЬ ПАРОЛЬ">
+
+        <button class="email-btn" id="registerButton">
+            <span class="arrow">→</span>
+            <span class="txt">Зареєструватися</span>
+        </button>
+        <p class="dop-links">
+            <span class="pre-link-text-start">Вже є акаунт? </span>
+            <a href="" id="switchToLogin">Увійти</a>
+        </p>
+        </div>
+    </div>
+
+    <div class="reset-password">
+        <div class="modal">
+            <span class="close-btn">✕</span>
+        <h2>Скинути пароль</h2>
+
+        <input type="email" class="email-input" id="resetEmail" placeholder="ЕЛЕКТРОННА ПОШТА">
+
+        <button class="email-btn" id="resetPasswordButton">
+            <span class="arrow">→</span>
+        <span class="txt" id="resetPas">Скинути пароль</span>
+            </button>
+        <p class="dop-links">
+            <a href="" id="cancelReset">Скасувати</a>
+        </p>
+        </div>
+    </div>
+
     <header class="header">
         <div class="header-left">
             <a href="index.html" class="logo">
@@ -21,6 +90,11 @@
                 <a href="help.html">Help</a>
             </nav>
         </div>
+
+        <input type="checkbox" id="burger-toggle">
+        <label for="burger-toggle" class="burger-menu">
+            <span></span>
+        </label>
 
         <div class="search-bar">
             <input type="text" placeholder="Search...">

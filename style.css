@@ -6,7 +6,7 @@
 }
 
 body {
-    background: #ffffff;
+    background: #009336;
     color: #111;
     cursor: url('images/cursor321.png'), auto;
 }
@@ -245,6 +245,182 @@ input, label, p, h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
 }
 
+
+
+.modal-overlay-log {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.35);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal-overlay-start {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.35);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.reset-password {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.35);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal {
+    background: white;
+    width: 380px;
+    padding: 40px 35px;
+    border-radius: 12px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.close-btn {
+    position: absolute;
+    right: 18px;
+    top: 18px;
+    font-size: 26px;
+}
+
+.modal h2 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 26px;
+}
+
+.google-btn {
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: white;
+    border: 1.5px solid #cfcfcf;
+    text-decoration: none;
+    color: black;
+}
+
+.divider {
+    text-align: center;
+    margin: 18px 0;
+    color: #888;
+}
+
+.email-input {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    background: #ececec;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    margin-bottom: 25px;
+}
+
+.dark-input {
+    background: #2a2a2c !important;
+    color: #e6e6e6;
+    border: 1px solid #3a3a3c !important;
+    margin-bottom: 0 !important;
+}
+
+.dark-input:focus {
+    border-color: #6366f1 !important;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.dark-input::placeholder {
+    color: #5a5a5a;
+}
+
+.email-btn {
+    width: 100%;
+    background: black;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 17px;
+    font-weight: 600;
+    border-radius: 12px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+
+    transition:
+      padding 0.25s ease,
+      border-radius 0.25s ease,
+      gap 0.25s ease;
+}
+
+.email-btn span.arrow {
+    opacity: 0;
+    transform: translateX(-6px);
+    transition: 0.25s ease;
+}
+
+.email-btn:hover {
+    border-radius: 0;
+    padding-left: 22px;
+}
+
+.email-btn:hover span.arrow {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.email-btn:hover span.txt {
+    transform: translateX(6px);
+    transition: 0.25s ease;
+}
+
+.dop-links p{
+    font-size: 16px;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    text-decoration: none;
+    color: black;
+}
+
+.dop-links a{
+    font-size: 16px;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    text-decoration: none;
+    color: rgb(0, 64, 255);
+}
+
+
+
+
+
 .footer {
     background: #111;
     color: #fff;
@@ -353,6 +529,16 @@ input, label, p, h1, h2, h3, h4, h5, h6 {
 }
 
 
+.label {
+    display: none;
+}
+
+#burger-toggle {
+    display: none;
+}
+
+
+
 @media (max-width: 1024px) {
     .header-search {
         width: 300px;
@@ -363,7 +549,7 @@ input, label, p, h1, h2, h3, h4, h5, h6 {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 784px) {
     .header {
         flex-wrap: wrap;
         height: auto;
@@ -391,4 +577,49 @@ input, label, p, h1, h2, h3, h4, h5, h6 {
     .products-container {
         padding: 20px;
     }
+
+    .label {
+        position: relative;
+        display: block;
+        height: 25px;
+        width: 30px;
+    }
+
+    .label::after, label::before, label span {
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background: white;
+        transition: .3s;
+    }
+
+    .label::before {
+        content: "";
+        top: 0;
+    }
+
+    .label::after {
+        content: "";
+        bottom: 0;
+    }
+
+    .label span {
+        top: 11px;
+    }
+
+    #burger-toggle:checked ~ .label::after {
+        transform: rotate(45deg);
+        bottom: 10px;
+    }
+
+    #burger-toggle:checked ~ .label::before {
+        transform: rotate(-45deg);
+        top: 12px;
+    }
+
+    #burger-toggle:checked ~ .label span {
+        transform: rotate(-45deg);
+        top: 12px;
+    }
+
 }
