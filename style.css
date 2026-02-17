@@ -6,7 +6,7 @@
 }
 
 body {
-    background: #009336;
+    background: #ffffff;
     color: #111;
     cursor: url('images/cursor321.png'), auto;
 }
@@ -28,17 +28,17 @@ input, label, p, h1, h2, h3, h4, h5, h6 {
     align-items: center;
     justify-content: space-between;
 
-    padding: 0 40px;
+    padding: 0 10px;
 }
 
 .header-left {
     display: flex;
     align-items: center;
-    gap: 40px;
+    gap: 20px;
 }
 
 .logo img {
-    height: 80px;
+    height: 100px;
 }
 
 .nav {
@@ -58,13 +58,14 @@ input, label, p, h1, h2, h3, h4, h5, h6 {
     opacity: 1;
 }
 
-.header-right {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
+.catalogue-btn {
+    margin: 0 auto;
+    background: #111;
+    border-radius: 20px;
+    border: 1px solid #fff;
 
-.cart {
+    padding: 6px 14px;
+
     font-size: 20px;
     font-weight: 500;
     color: #fff;
@@ -73,10 +74,52 @@ input, label, p, h1, h2, h3, h4, h5, h6 {
     align-items: center;
     gap: 8px;
     opacity: 0.9;
+    overflow: hidden;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.catalogue-btn:hover {
+    opacity: 1;
+    background: #fff;
+    color: #111;
+}
+
+.catalogue-btn img {
+    height: 20px;
+}
+
+
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.cart {
+    margin: 0 auto;
+    background: #111;
+    border-radius: 20px;
+    border: 1px solid #fff;
+
+    padding: 6px 14px;
+
+    font-size: 20px;
+    font-weight: 500;
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    opacity: 0.9;
+    overflow: hidden;
+    transition: background 0.2s ease, color 0.2s ease;
 }
 
 .cart:hover {
     opacity: 1;
+    background: #fff;
+    color: #111;
 }
 
 .cart img {
