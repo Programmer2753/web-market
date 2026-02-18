@@ -43,18 +43,29 @@ input, label, p, h1, h2, h3, h4, h5, h6 {
 
 .nav {
     display: flex;
-    gap: 30px;
 }
 
 .nav a {
+    margin: 0 auto;
     font-size: 20px;
     font-weight: 500;
     opacity: 0.9;
     color: #fff;
     text-decoration: none;
+    gap: 8px;
+    padding: 6px 14px;
+}
+
+.nav a img {
+    height: 20px;
+    opacity: 0.9;
 }
 
 .nav a:hover {
+    opacity: 1;
+}
+
+.nav a:hover img {
     opacity: 1;
 }
 
@@ -86,9 +97,12 @@ input, label, p, h1, h2, h3, h4, h5, h6 {
 
 .catalogue-btn img {
     height: 20px;
+    transition: filter 0.2s ease;
 }
 
-
+.catalogue-btn:hover img {
+    filter: invert(1);
+}
 
 .header-right {
     display: flex;
@@ -124,10 +138,44 @@ input, label, p, h1, h2, h3, h4, h5, h6 {
 
 .cart img {
     height: 20px;
+    transition: filter 0.2s ease;
+}
+
+.cart:hover img {
+    filter: invert(1);
+}
+
+
+.auth-buttons button {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    border: none;
+    gap: 8px;
+    background: #111;
+    font-size: 20px;
+    font-weight: 500;
+    opacity: 0.9;
+    color: #fff;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+.auth-buttons button:hover {
+    opacity: 1;
+}
+
+.auth-buttons button img {
+    height: 20px;
+    opacity: 0.9;
+}
+
+.auth-buttons button:hover img {
+    opacity: 1;
 }
 
 .user-menu {
-    display: flex;
+    display: none;
     align-items: center;
     gap: 6px;
 
