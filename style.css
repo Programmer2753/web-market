@@ -20,15 +20,20 @@ input, label, p, h1, h2, h3, h4, h5, h6 {
 }
 
 .header {
+    position: fixed;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+
     height: 75px;
     background: #111;
     color: #fff;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
     padding: 0 10px;
+
+    border-bottom: 1px solid #ddd;
+    inset: 0 0 auto 0;
+    z-index: 10000;
+    backdrop-filter: blur(12px);
 }
 
 .header-left {
@@ -74,35 +79,68 @@ input, label, p, h1, h2, h3, h4, h5, h6 {
     background: #111;
     border-radius: 20px;
     border: 1px solid #fff;
-
     padding: 6px 14px;
-
     font-size: 20px;
     font-weight: 500;
     color: #fff;
-    text-decoration: none;
     display: flex;
     align-items: center;
     gap: 8px;
     opacity: 0.9;
     overflow: hidden;
+    cursor: pointer;
     transition: background 0.2s ease, color 0.2s ease;
 }
 
-.catalogue-btn:hover {
+.catalogue-btn:hover, .catalogue-btn.open {
     opacity: 1;
     background: #fff;
     color: #111;
 }
 
-.catalogue-btn img {
+.catalogue-btn .icon {
+    position: relative;
+    width: 20px;
     height: 20px;
-    transition: filter 0.2s ease;
+}
+
+.catalogue-btn img {
+    width: 20px;
+    height: 20px;
+    transition: opacity 0.25s ease, transform 0.25s ease, filter 0.2s ease;
 }
 
 .catalogue-btn:hover img {
     filter: invert(1);
 }
+
+
+/* крестик */
+.catalogue-btn .icon::after {
+    content: "✕";
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 600;
+    opacity: 0;
+    transform: rotate(-90deg) scale(0.5);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+/* состояние ОТКРЫТО */
+.catalogue-btn.open img {
+    opacity: 0;
+    transform: rotate(90deg) scale(0.5);
+}
+
+.catalogue-btn.open .icon::after {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+}
+
 
 .header-right {
     display: flex;
@@ -203,11 +241,6 @@ input, label, p, h1, h2, h3, h4, h5, h6 {
     opacity: 0.7;
 }
 
-.search-wrapper {
-    background: #dcdcdc;
-    padding: 15px 0;
-}
-
 .search-bar {
     margin: 0 auto;
     width: 420px;
@@ -219,6 +252,7 @@ input, label, p, h1, h2, h3, h4, h5, h6 {
 
     display: flex;
     align-items: center;
+    justify-content: center;
 
     padding-left: 14px;
     gap: 8px;
@@ -236,7 +270,7 @@ input, label, p, h1, h2, h3, h4, h5, h6 {
 
 .search-bar input::placeholder {
     color: #fff;
-    opacity: 0.7;
+    opacity: 0.9;
 }
 
 .search-bar button {
@@ -283,6 +317,7 @@ input, label, p, h1, h2, h3, h4, h5, h6 {
     padding: 40px;
     max-width: 1400px;
     margin: 0 auto;
+    margin-top: 75px;
 }
 
 .products-grid {
@@ -619,98 +654,143 @@ input, label, p, h1, h2, h3, h4, h5, h6 {
     opacity: 0.7;
 }
 
-
-.label {
+.catalogue-menu {
     display: none;
+    position: fixed;
+    top: 75px;
+    left: 0;
+    background: #111;
+    border-radius: 12px;
+    padding: 10px 0;
+    
+    flex-direction: column;
+    gap: 10px;
+    z-index: 10000;
 }
 
-#burger-toggle {
-    display: none;
+.catalogue-menu a img {
+    width: 20px;
+    height: 20px;
+} 
+
+.catalogue-menu.open {
+    display: flex;
+    flex-direction: column;
+}
+
+.catalogue-menu a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 20px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background 0.2s ease;
+}
+
+.catalogue-menu a:hover {
+    background: rgba(255,255,255,0.1);
 }
 
 
-
-@media (max-width: 1024px) {
-    .header-search {
-        width: 300px;
-    }
-
-    .nav {
-        gap: 20px;
-    }
+.catalogue-item {
+    position: relative;
 }
 
-@media (max-width: 784px) {
-    .header {
-        flex-wrap: wrap;
-        height: auto;
-        gap: 12px;
-        padding: 15px 20px;
-    }
+.catalogue-item > a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 20px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background 0.2s ease;
+}
 
-    .header-left {
-        gap: 20px;
-    }
+.catalogue-item > a::after {
+    content: "›";
+    opacity: 0;
+    transform: translateX(-5px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
 
-    .nav {
-        display: none;
-    }
+.catalogue-item:hover > a::after {
+    opacity: 1;
+    transform: translateX(0);
+}
 
-    .header-search {
-        width: 100%;
-        order: 3;
-    }
+.catalogue-item:hover > a {
+    background: rgba(255,255,255,0.1);
+}
 
-    .header-right {
-        gap: 12px;
-    }
+.submenu.mega {
+    position: absolute;
+    top: 0;
+    left: 100%;
 
-    .products-container {
-        padding: 20px;
-    }
+    display: grid;
+    grid-template-columns: repeat(5, minmax(180px, 1fr));
+    gap: 30px;
 
-    .label {
-        position: relative;
-        display: block;
-        height: 25px;
-        width: 30px;
-    }
+    background: #111;
+    border-radius: 16px;
+    padding: 24px;
 
-    .label::after, label::before, label span {
-        position: absolute;
-        width: 100%;
-        height: 3px;
-        background: white;
-        transition: .3s;
-    }
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(10px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
 
-    .label::before {
-        content: "";
-        top: 0;
-    }
+    z-index: 10000;
+}
 
-    .label::after {
-        content: "";
-        bottom: 0;
-    }
+.mega-column {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
 
-    .label span {
-        top: 11px;
-    }
+.mega-column h4 {
+    margin: 0 0 8px;
+    font-size: 17px;
+    font-weight: 600;
+    color: #fff;
+    opacity: 0.9;
+}
 
-    #burger-toggle:checked ~ .label::after {
-        transform: rotate(45deg);
-        bottom: 10px;
-    }
+.mega-column a {
+    padding: 4px 0;
+    font-size: 15px;
+    color: #eaeaea;
+    text-decoration: none;
+}
 
-    #burger-toggle:checked ~ .label::before {
-        transform: rotate(-45deg);
-        top: 12px;
-    }
+.mega-column a:hover {
+    color: #fff;
+    background: none;
+}
 
-    #burger-toggle:checked ~ .label span {
-        transform: rotate(-45deg);
-        top: 12px;
-    }
+.catalogue-item:hover .submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
 
+.menu-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    backdrop-filter: blur(2px);
+
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease;
+    z-index: 9000;
+}
+
+.menu-overlay.open {
+    opacity: 1;
+    visibility: visible;
 }

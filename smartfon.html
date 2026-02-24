@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <title>TechZone - Smartphones</title>
+</head>
+<body>
+    <script src="app.js"></script>
+    <div class="modal-overlay-log">
+        <div class="modal">
+            <span class="close-btn">✕</span>
+        <h2>Увійти в акаунт</h2>
+            <a class="google-btn" href="">
+            <img src="https://www.gstatic.com/images/branding/product/1x/gsa_64dp.png" width="20" id="continueGoogle">
+            Продовжити з Google
+            </a>
+        <div class="divider" id="ort-log">або</div>
+
+        <input type="email" class="email-input" id="loginEmail" placeholder="ЕЛЕКТРОННА ПОШТА">
+        <input type="password" class="email-input" id="loginPassword" placeholder="ПАРОЛЬ">
+
+        <button class="email-btn" id="loginButton">
+            <span class="arrow">→</span>
+            <span class="txt">Увійти</span>
+        </button>
+        <p class="dop-links"><a href="" id="resetPasswordLink">Забули пароль?</a></p>
+        <p class="dop-links">
+            <span class="pre-link-text-log">Немає акаунту? </span>
+            <a href="" id="switchToRegister">Створити акаунт</a>
+        </p>
+        </div>
+    </div>
+
+    <div class="modal-overlay-start">
+        <div class="modal">
+            <span class="close-btn">✕</span>
+        <h2>Створити акаунт</h2>
+            <a class="google-btn" href="">
+            <img src="https://www.gstatic.com/images/branding/product/1x/gsa_64dp.png" width="20" id="continueGoogle">
+            Продовжити з Google
+            </a>
+        <div class="divider" id="ort-reg">або</div>
+
+        <input type="email" class="email-input" id="regEmail" placeholder="ЕЛЕКТРОННА ПОШТА">
+        <input type="password" class="email-input" id="regPassword" placeholder="ПАРОЛЬ">
+        <input type="password" class="email-input" id="regConfirmPassword" placeholder="ПІДТВЕРДІТЬ ПАРОЛЬ">
+
+        <button class="email-btn" id="registerButton">
+            <span class="arrow">→</span>
+            <span class="txt">Зареєструватися</span>
+        </button>
+        <p class="dop-links">
+            <span class="pre-link-text-start">Вже є акаунт? </span>
+            <a href="" id="switchToLogin">Увійти</a>
+        </p>
+        </div>
+    </div>
+
+    <div class="reset-password">
+        <div class="modal">
+            <span class="close-btn">✕</span>
+        <h2>Скинути пароль</h2>
+
+        <input type="email" class="email-input" id="resetEmail" placeholder="ЕЛЕКТРОННА ПОШТА">
+
+        <button class="email-btn" id="resetPasswordButton">
+            <span class="arrow">→</span>
+        <span class="txt" id="resetPas">Скинути пароль</span>
+            </button>
+        <p class="dop-links">
+            <a href="" id="cancelReset">Скасувати</a>
+        </p>
+        </div>
+    </div>
+
+    <header class="header">
+        <div class="header-left">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png">
+            </a>
+
+            <nav class="nav">
+                <button class="catalogue-btn">
+                    Catalogue
+                    <span class="icon">
+                        <img src="images/catalogue_icon.png">
+                    </span>
+                </button>
+                <a href="about.html">
+                    About us
+                    <img src="images/about_icon.png">
+                </a>
+                <a href="help.html">
+                    Help
+                    <img src="images/phone_icon.png">
+                </a>
+            </nav>
+        </div>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Search...">
+            <button>
+                <img src="images/search_icon.png">
+            </button>
+        </div>
+
+        <div class="header-right">
+            <div class="auth-buttons">
+                <button id="loginBtn">Login<img src="images/login_icon.png" alt=""></button>
+            </div>
+
+            <a href="cart.html" class="cart">
+                Cart
+                <img src="images/cart_icon.png" alt="">
+            </a>
+            
+            <div class="user-menu">
+                <div class="avatar">Y</div>
+                <img src="images/arrow_down.png" class="arrow">
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="sale-container">
+            <div class="catalogue-menu">
+                <div class="catalogue-item">
+                    <a href="smartfon.html">
+                        <img src="images/srt_icon.png" alt="">
+                        Smartphones and phones
+                    </a>
+
+                    <div class="submenu mega">
+                        <div class="mega-column">
+                            <h4>Apple</h4>
+                            <a href="#" id="17pm">iPhone 17 Pro Max</a>
+                            <a href="#" id="17p">iPhone 17 Pro</a>
+                            <a href="#" id="17">iPhone 17</a>
+                            <a href="#" id="air">iPhone Air</a>
+                            <a href="#" id="16pm">iPhone 16 Pro Max</a>
+                            <a href="#" id="16p">iPhone 16 Pro</a>
+                            <a href="#" id="16p">iPhone 16 Plus</a>
+                            <a href="#" id="16">iPhone 16</a>
+                            <a href="#" id="16e">iPhone 16e</a>
+                            <a href="#" id="bi">б/y iPhone</a>
+                        </div>
+                        
+                        <div class="mega-column">
+                            <h4>Samsung</h4>
+                            <a href="#">Galaxy S25 Ultra</a>
+                            <a href="#">Galaxy S25</a>
+                            <a href="#">Galaxy S25 Edge</a>
+                            <a href="#">Galaxy S25+</a>
+                            <a href="#">Galaxy S25 FE</a>
+                            <a href="#">Galaxy S24 Ultra</a>
+                            <a href="#">Galaxy S24</a>
+                            <a href="#">Galaxy S24 FE</a>
+                            <a href="#">Galaxy Fold 7</a>
+                            <a href="#">Galaxy Flip 7</a>
+                            <a href="#">Galaxy A56</a>
+                            <a href="#">Galaxy A36</a>
+                            <a href="#" id="bs">б/y Samsung</a>
+                        </div>
+
+                        <div class="mega-column">
+                            <h4>Google</h4>
+                            <a href="#">Pixel 10</a>
+                            <a href="#">Pixel 10a</a>
+                            <a href="#">Pixel 10 Pro</a>
+                            <a href="#">Pixel 10 Pro XL</a>
+                            <a href="#">Pixel 10 Pro Fold</a>
+                            <a href="#">Pixel 9</a>
+                            <a href="#">Pixel 9a</a>
+                            <a href="#">Pixel 9 Pro</a>
+                            <a href="#">Pixel 9 Pro XL</a>
+                            <a href="#" id="bp">б/у Pixel</a>
+                            <br>
+                            <h4>Xiaomi</h4>
+                            <a href="#">Xiaomi 15 Ultra</a>
+                            <a href="#">Xiaomi 15T Pro</a>
+                            <a href="#">Xiaomi 15T</a>
+                            <a href="#">Xiaomi 15</a>
+                        </div>
+
+                        <div class="mega-column">
+                            <h4>Redmi</h4>
+                            <a href="#">Note 14 Pro</a>
+                            <a href="#">Note 14</a>
+                            <a href="#">Note 14 Pro+</a>
+                            <a href="#">Note 14s</a>
+                            <a href="#">Redmi 15</a>
+                            <br>
+                            <h4>POCO</h4>
+                            <a href="#">POCO C85</a>
+                            <a href="#">POCO F8 Pro</a>
+                            <a href="#">POCO X7</a>
+                            <a href="#">POCO X7 Pro</a>
+                            <a href="#">POCO F7</a>
+                            <br>
+                            <h4>Motorola</h4>
+                            <a href="#">MOTO Razr 60 Ultra</a>
+                            <a href="#">MOTO Edge 70</a>
+                            <a href="#">MOTO Edge 60 Pro</a>
+                            <a href="#">MOTO Edge 60 Fusion</a>
+                        </div>
+
+                        <div class="mega-column">
+                            <h4>OnePlus</h4>
+                            <a href="#">OnePlus 15</a>
+                            <a href="#">OnePlus 15R</a>
+                            <br>
+                            <h4>OPPO</h4>
+                            <a href="#">A5 Pro</a>
+                            <a href="#">Reno 14</a>
+                            <br>
+                            <h4>Nothing</h4>
+                            <a href="#">Phone (3)</a>
+                            <a href="#">Phone (3a)</a>
+                            <a href="#">Phone (3a) Pro</a>
+                            <br>
+                            <h4>б/у Android</h4>
+                            <a href="#" id="ba">Google Pixel</a>
+                            <a href="#" id="bap">Samsung Galaxy</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="catalogue-item">
+                    <a href="#">
+                        <img src="images/ltce_icon.png" alt="">
+                        Laptops, tablets and computer equipment
+                    </a>
+
+                    <div class="submenu mega">
+                        <div class="mega-column">
+                            <h4>Apple</h4>
+                            <a href="#">MacBook Air</a>
+                            <a href="#">MacBook Pro</a>
+                            <a href="#">iPad</a>
+                            <a href="#">iPad Pro</a>
+                        </div>
+
+                        <div class="mega-column">
+                            <h4>Windows laptops</h4>
+                            <a href="#">ASUS</a>
+                            <a href="#">Acer</a>
+                            <a href="#">Lenovo</a>
+                            <a href="#">HP</a>
+                            <a href="#">Dell</a>
+                        </div>
+
+                        <div class="mega-column">
+                            <h4>Tablets</h4>
+                            <a href="#">Samsung Galaxy Tab</a>
+                            <a href="#">Xiaomi Pad</a>
+                            <a href="#">Lenovo Tab</a>
+                        </div>
+
+                        <div class="mega-column">
+                            <h4>Accessories</h4>
+                            <a href="#">Keyboards</a>
+                            <a href="#">Mice</a>
+                            <a href="#">Monitors</a>
+                            <a href="#">Docking stations</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="catalogue-item">
+                    <a href="#"><img src="images/kit_icon.png" alt=""> Kitchen equipment</a>
+
+                    <div class="submenu mega">
+                        <div class="mega-column">
+                            <h4>Cooking</h4>
+                            <a href="#">Microwave ovens</a>
+                            <a href="#">Electric ovens</a>
+                            <a href="#">Multicookers</a>
+                        </div>
+
+                        <div class="mega-column">
+                            <h4>Drinks</h4>
+                            <a href="#">Coffee makers</a>
+                            <a href="#">Coffee machines</a>
+                            <a href="#">Electric kettles</a>
+                        </div>
+
+                        <div class="mega-column">
+                            <h4>Preparation</h4>
+                            <a href="#">Blenders</a>
+                            <a href="#">Mixers</a>
+                            <a href="#">Food processors</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="catalogue-item">
+                    <a href="#"><img src="images/ha_icon.png" alt=""> Home appliances</a>
+
+                    <div class="submenu mega">
+                        <div class="mega-column">
+                            <h4>Large appliances</h4>
+                            <a href="#">Refrigerators</a>
+                            <a href="#">Washing machines</a>
+                            <a href="#">Dishwashers</a>
+                        </div>
+
+                        <div class="mega-column">
+                            <h4>Climate</h4>
+                            <a href="#">Air conditioners</a>
+                            <a href="#">Heaters</a>
+                            <a href="#">Humidifiers</a>
+                        </div>
+
+                        <div class="mega-column">
+                            <h4>Cleaning</h4>
+                            <a href="#">Vacuum cleaners</a>
+                            <a href="#">Robot vacuums</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="catalogue-item">
+                    <a href="#"><img src="images/tvs_icon.png" alt=""> TVs and multimedia</a>
+
+                    <div class="submenu mega">
+                        <div class="mega-column">
+                            <h4>TVs</h4>
+                            <a href="#">Smart TVs</a>
+                            <a href="#">OLED TVs</a>
+                            <a href="#">QLED TVs</a>
+                        </div>
+
+                        <div class="mega-column">
+                            <h4>Audio</h4>
+                            <a href="#">Soundbars</a>
+                            <a href="#">Home theaters</a>
+                        </div>
+
+                        <div class="mega-column">
+                            <h4>Projection</h4>
+                            <a href="#">Projectors</a>
+                            <a href="#">Media players</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="catalogue-item">
+                    <a href="#"><img src="images/sw_icon.png" alt=""> Smart watches and gadgets</a>
+
+                    <div class="submenu mega">
+                        <div class="mega-column">
+                            <h4>Smart watches</h4>
+                            <a href="#">Apple Watch</a>
+                            <a href="#">Samsung Galaxy Watch</a>
+                            <a href="#">Xiaomi Watch</a>
+                        </div>
+
+                        <div class="mega-column">
+                            <h4>Gadgets</h4>
+                            <a href="#">Fitness trackers</a>
+                            <a href="#">VR headsets</a>
+                            <a href="#">Smart glasses</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="catalogue-item">
+                    <a href="#"><img src="images/gcg_icon.png" alt=""> Game consoles and gaming</a>
+
+                    <div class="submenu mega">
+                        <div class="mega-column">
+                            <h4>Consoles</h4>
+                            <a href="#">PlayStation 5</a>
+                            <a href="#">Xbox Series X</a>
+                            <a href="#">Nintendo Switch</a>
+                        </div>
+
+                        <div class="mega-column">
+                            <h4>Gaming accessories</h4>
+                            <a href="#">Gamepads</a>
+                            <a href="#">Gaming headsets</a>
+                            <a href="#">Racing wheels</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="catalogue-item">
+                    <a href="#"><img src="images/acc_icon.png" alt=""> Accessories</a>
+
+                    <div class="submenu mega">
+                        <div class="mega-column">
+                            <h4>For smartphones</h4>
+                            <a href="#">Phone cases</a>
+                            <a href="#">Chargers</a>
+                            <a href="#">Cables</a>
+                            <a href="#">Power banks</a>
+                        </div>
+
+                        <div class="mega-column">
+                            <h4>For computers</h4>
+                            <a href="#">External drives</a>
+                            <a href="#">USB hubs</a>
+                            <a href="#">Webcams</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="products-container">
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/x.jpeg" alt="iPhone XS">
+                    </div>
+                    <h3>iPhone XS</h3>
+                    <p>$199.99</p>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/x.jpeg" alt="iPhone XS">
+                    </div>
+                    <h3>iPhone XS</h3>
+                    <p>$199.99</p>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/x.jpeg" alt="iPhone XS">
+                    </div>
+                    <h3>iPhone XS</h3>
+                    <p>$199.99</p>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/x.jpeg" alt="iPhone XS">
+                    </div>
+                    <h3>iPhone XS</h3>
+                    <p>$199.99</p>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/x.jpeg" alt="iPhone XS">
+                    </div>
+                    <h3>iPhone XS</h3>
+                    <p>$199.99</p>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/x.jpeg" alt="iPhone XS">
+                    </div>
+                    <h3>iPhone XS</h3>
+                    <p>$199.99</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer-brand">TechZone</div>
+
+        <div class="footer-socials">
+            <span>Our Socials</span>
+            <div class="social-icons">
+                <a href="https://www.tiktok.com" target="_blank">
+                    <img src="images/tiktok_icon.png" alt="TikTok">
+                </a>
+                <a href="https://www.facebook.com" target="_blank">
+                    <img src="images/facebook_icon.png" alt="Facebook">
+                </a>
+                <a href="https://www.youtube.com" target="_blank">
+                    <img src="images/youtube_icon.png" alt="YouTube">
+                </a>
+                <a href="https://www.instagram.com" target="_blank">
+                    <img src="images/instagram_icon.png" alt="Instagram">
+                </a>
+            </div>
+        </div>
+
+        <div class="language-selection">
+            <select id="language" name="language">
+                <option value="en">English</option>
+                <option value="ru">Русский</option>
+                <option value="ua">Українська</option>
+            </select>
+        </div>
+
+        <p class="copyright">© 2026 TechZone. All rights reserved.</p>
+    </footer>
+    <div class="menu-overlay"></div>
+</body>
+</html>
