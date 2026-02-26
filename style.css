@@ -8,15 +8,6 @@
 body {
     background: #e4e4e4;
     color: #111;
-    cursor: url('images/cursor321.png'), auto;
-}
-
-a, button, span, li, td {
-    cursor: url("images/hand_cursor321.png"), auto;
-}
-
-input, label, p, h1, h2, h3, h4, h5, h6 {
-    cursor: url('images/text_cursor321.png'), auto;
 }
 
 .header {
@@ -403,38 +394,57 @@ input, label, p, h1, h2, h3, h4, h5, h6 {
 
 .buy-btn {
     margin-top: auto;
-    border: none;
+
+    border: 1px solid #fff;
     font-family: inherit;
+
     display: inline-flex;
     align-items: center;
-    text-align: center;
-    gap: 12px;
-    padding: 14px 22px;
-    background: linear-gradient(135deg, #000000, #565656);
+    justify-content: center;
+    gap: 10px;
+
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 500;
+
+    background: #111;
     color: #fff;
-    text-decoration: none;
-    font-weight: 600;
-    border-radius: 14px;
-    transition: all 0.25s ease;
+
+    border-radius: 20px;
+    cursor: pointer;
+    opacity: 0.9;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+
     box-shadow: 0 8px 8px rgba(0, 0, 0, 0.35);
-    overflow: hidden;
     appearance: none;
 }
 
 .buy-btn:hover {
+    opacity: 1;
+    background: #fff;
+    color: #111;
     transform: translateY(-2px);
-    box-shadow: 0 12px 28px rgba(42, 42, 42, 0.5);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.45);
 }
 
 .buy-btn:active {
     transform: translateY(0);
-    box-shadow: 0 6px 16px rgba(42, 42, 42, 0.4);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
 }
 
 .buy-btn .icon {
     font-size: 18px;
+    transition: transform 0.25s ease;
 }
 
+.buy-btn:hover .icon {
+    transform: translateX(2px);
+}
 
 .modal-overlay-log {
     position: fixed;
@@ -881,7 +891,7 @@ input, label, p, h1, h2, h3, h4, h5, h6 {
     padding: 40px 100px;
     margin: 0 auto;
     margin-top: 75px;
-    background: linear-gradient(135deg, #ff684d 0%, #ff8e7a 100%);
+    background: linear-gradient(135deg, #ff2600 0%, #fe5d41 100%);
 }
 
 .sale-content h2 {
@@ -893,22 +903,43 @@ input, label, p, h1, h2, h3, h4, h5, h6 {
 .view-all-btn {
     display: inline-flex;
     align-items: center;
-    gap: 12px;
+    justify-content: center;
+    gap: 10px;
 
     padding: 12px 22px;
     border-radius: 20px;
 
-    background: #fff;
-    color: #111;
-    text-decoration: none;
+    background: #111;
+    color: #fff;
+    border: 1px solid #fff;
 
+    text-decoration: none;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 500;
+
+    opacity: 0.9;
+    cursor: pointer;
 
     transition:
-        background 0.25s ease,
-        color 0.25s ease,
-        transform 0.25s ease;
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.35);
+}
+
+.view-all-btn:hover {
+    opacity: 1;
+    background: #fff;
+    color: #111;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.45);
+}
+
+.view-all-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
 }
 
 .view-all-btn .arrow {
@@ -916,14 +947,8 @@ input, label, p, h1, h2, h3, h4, h5, h6 {
     transition: transform 0.25s ease;
 }
 
-.view-all-btn:hover {
-    background: #111;
-    color: #fff;
-    transform: translateY(-2px);
-}
-
 .view-all-btn:hover .arrow {
-    transform: translateX(4px);
+    transform: translateX(3px);
 }
 
 .product-content h2 {
