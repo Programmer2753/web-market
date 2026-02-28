@@ -46,6 +46,60 @@ document.addEventListener('DOMContentLoaded', () => {
             overlay.classList.remove('open');
         }
     });
+
+    const categoryTop = document.querySelector('.category-top');
+    const sortSelect = document.querySelector('.sort-select');
+    const sortBtn = sortSelect.querySelector('.sort-btn');
+    const sortText = sortSelect.querySelector('.sort-text');
+    const options = sortSelect.querySelectorAll('.sort-dropdown button');
+
+    let lastScrollY = window.scrollY;
+
+    /* сворачивание при скролле */
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.scrollY;
+
+        if (currentScroll > lastScrollY && currentScroll > 50) {
+            categoryTop.classList.add('collapsed');
+        } else {
+            categoryTop.classList.remove('collapsed');
+        }
+
+        lastScrollY = currentScroll;
+    });
+
+    /* открытие селектора */
+    sortBtn.addEventListener('click', () => {
+        sortSelect.classList.toggle('open');
+    });
+
+    /* выбор сортировки */
+    options.forEach(option => {
+        option.addEventListener('click', () => {
+            options.forEach(o => o.classList.remove('active'));
+            option.classList.add('active');
+
+            sortText.textContent = option.textContent;
+            sortSelect.classList.remove('open');
+
+            console.log('Сортировка:', option.dataset.sort);
+        });
+    });
+
+    /* закрытие по клику вне */
+    document.addEventListener('click', (e) => {
+        if (!sortSelect.contains(e.target)) {
+            sortSelect.classList.remove('open');
+        }
+    });
+
+    document.querySelectorAll('.filter-header').forEach(header => {
+        header.addEventListener('click', () => {
+            // Ищем родительский блок и переключаем ему класс collapsed
+            const block = header.closest('.filter-block');
+            block.classList.toggle('collapsed');
+        });
+    });
     
     lang_menu();
 });
