@@ -28,7 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!catalogue_button || !catalogue_menu || !overlay) return;
 
-
     catalogue_button.addEventListener('click', (e) => {
         e.preventDefault();
         catalogue_button.classList.toggle('open');
@@ -46,6 +45,9 @@ document.addEventListener('DOMContentLoaded', () => {
             overlay.classList.remove('open');
         }
     });
+
+
+
 
     const categoryTop = document.querySelector('.category-top');
     const sortSelect = document.querySelector('.sort-select');
@@ -100,6 +102,8 @@ document.addEventListener('DOMContentLoaded', () => {
             block.classList.toggle('collapsed');
         });
     });
+
+    
     
     lang_menu();
 });
