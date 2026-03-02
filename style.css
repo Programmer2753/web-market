@@ -374,6 +374,11 @@ body {
     border-radius: 12px;
 }
 
+.price-regular {
+    color: #1a1a1a;
+    font-weight: bold;
+}
+
 .product-card .price {
     display: flex;
     align-items: center;
