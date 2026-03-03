@@ -124,10 +124,13 @@
                 <button id="loginBtn">Login<img src="images/login_icon.png" alt=""></button>
             </div>
 
-            <a href="cart.html" class="cart">
-                Cart
-                <img src="images/cart_icon.png" alt="">
-            </a>
+            <div class="cart-icon-wrapper">
+                <button class="cart-open-btn cart">
+                    Cart
+                    <img src="images/cart_icon.png" alt="">
+                </button>
+                <span class="cart-count">0</span>
+            </div>
             
             <div class="user-menu">
                 <div class="avatar">Y</div>
@@ -135,6 +138,7 @@
             </div>
         </div>
     </header>
+    
     <main>
         <div class="catalogue-menu">
             <div class="catalogue-item">
@@ -775,6 +779,25 @@
         <p class="copyright">© 2026 TechZone. All rights reserved.</p>
     </footer>
     <div class="menu-overlay"></div>
+    <div class="cart-overlay"></div>
+
+    <div class="cart-sidebar">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button class="close-cart">&times;</button>
+        </div>
+
+        <div class="cart-body">
+            </div>
+
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span class="total-amount">$0.00</span>
+            </div>
+            <button class="checkout-btn">Checkout</button>
+        </div>
+    </div>
     <script src="app.js"></script>
 </body>
 </html>
