@@ -1391,3 +1391,78 @@ body {
     border-color: #000;
     border-width: 1px;
 }
+
+.no-results {
+    grid-column: 1 / -1; /* Растягиваем на всю ширину сетки */
+    text-align: center;
+    padding: 60px 20px;
+    background: #fcfcfc;
+    border-radius: 12px;
+    border: 1px dashed #ccc;
+}
+
+.no-results-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    opacity: 0.7;
+}
+
+.no-results h3 {
+    margin: 0 0 10px 0;
+    color: #333;
+    font-size: 1.4rem;
+}
+
+.no-results p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.reset-filters-btn {
+    padding: 10px 24px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.reset-filters-btn:hover {
+    background-color: #0056b3;
+}
+
+.no-results-image {
+    width: 120px;
+    height: auto;
+    margin-bottom: 15px;
+    object-fit: contain;
+    filter: invert(1);
+}
+
+.reset-filters-btn {
+    width: 100%;
+    max-width: 250px; /* Чтобы кнопка не была на весь экран, если товаров нет */
+    margin: 20px auto 0;
+    background: #111;
+    border: 2px solid #111; 
+    border-radius: 8px; /* Те самые менее закругленные углы */
+    
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+    opacity: 0.9;
+}
+
+.reset-filters-btn:hover {
+    opacity: 1;
+    background: #fff;
+    color: #111;
+}
