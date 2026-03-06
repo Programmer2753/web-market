@@ -322,6 +322,70 @@ body {
     transition: transform 0.2s ease;
 }
 
+.search-input-wrapper {
+    position: relative;
+    flex-grow: 1;
+}
+
+.search-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    display: none; /* Скрыто по умолчанию */
+    z-index: 10000;
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 10px 0;
+}
+
+.search-dropdown.open { display: block; }
+
+.search-section-title {
+    padding: 8px 15px;
+    font-size: 12px;
+    color: #888;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.suggestion-item {
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.suggestion-item:hover { background: #f5f5f7; }
+
+.suggestion-item img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+.history-item {
+    padding: 8px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.history-item:hover { background: #f5f5f7; }
+
+.clear-history-btn {
+    font-size: 10px;
+    color: #ff3b30;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
 .products-container {
     padding: 40px;
     max-width: 1400px;
@@ -469,175 +533,6 @@ body {
     transform: translateX(2px);
 }
 
-.modal-overlay-log {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.35);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-}
-
-.modal-overlay-start {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.35);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-}
-
-.reset-password {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.35);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-}
-
-.modal {
-    background: white;
-    width: 380px;
-    padding: 40px 35px;
-    border-radius: 12px;
-    position: relative;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-}
-
-.close-btn {
-    position: absolute;
-    right: 18px;
-    top: 18px;
-    font-size: 26px;
-}
-
-.modal h2 {
-    text-align: center;
-    margin-top: 0;
-    margin-bottom: 25px;
-    font-size: 26px;
-}
-
-.google-btn {
-    width: 100%;
-    padding: 12px;
-    border-radius: 12px;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    background: white;
-    border: 1.5px solid #cfcfcf;
-    text-decoration: none;
-    color: black;
-}
-
-.divider {
-    text-align: center;
-    margin: 18px 0;
-    color: #888;
-}
-
-.email-input {
-    width: 100%;
-    padding: 12px;
-    font-size: 14px;
-    background: #ececec;
-    border-radius: 10px;
-    border: none;
-    outline: none;
-    margin-bottom: 25px;
-}
-
-.dark-input {
-    background: #2a2a2c !important;
-    color: #e6e6e6;
-    border: 1px solid #3a3a3c !important;
-    margin-bottom: 0 !important;
-}
-
-.dark-input:focus {
-    border-color: #6366f1 !important;
-    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
-}
-
-.dark-input::placeholder {
-    color: #5a5a5a;
-}
-
-.email-btn {
-    width: 100%;
-    background: black;
-    color: white;
-    border: none;
-    padding: 12px;
-    font-size: 17px;
-    font-weight: 600;
-    border-radius: 12px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 7px;
-
-    transition:
-      padding 0.25s ease,
-      border-radius 0.25s ease,
-      gap 0.25s ease;
-}
-
-.email-btn span.arrow {
-    opacity: 0;
-    transform: translateX(-6px);
-    transition: 0.25s ease;
-}
-
-.email-btn:hover {
-    border-radius: 0;
-    padding-left: 22px;
-}
-
-.email-btn:hover span.arrow {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-.email-btn:hover span.txt {
-    transform: translateX(6px);
-    transition: 0.25s ease;
-}
-
-.dop-links p{
-    font-size: 16px;
-    align-items: center;
-    justify-content: center;
-    gap: 18px;
-    text-decoration: none;
-    color: black;
-}
-
-.dop-links a{
-    font-size: 16px;
-    align-items: center;
-    justify-content: center;
-    gap: 18px;
-    text-decoration: none;
-    color: rgb(0, 64, 255);
-}
 
 
 
@@ -883,7 +778,7 @@ body {
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.25s ease;
-    z-index: 9000;
+    z-index: 9998;
 }
 
 .menu-overlay.open {

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="images/logo.png">
-    <title>TechZone - Laptops</title>
+    <title>TechZone - Accesories</title>
 </head>
 <body>
     <!-- Google tag (gtag.js) -->
@@ -39,8 +39,11 @@
         </div>
 
         <div class="search-bar">
-            <input type="text" placeholder="Search...">
-            <button>
+            <div class="search-input-wrapper">
+                <input type="text" id="global-search" placeholder="Search for products, brands...">
+                <div id="search-dropdown" class="search-dropdown"></div>
+            </div>
+            <button id="search-submit">
                 <img src="images/search_icon.png">
             </button>
         </div>
@@ -71,7 +74,6 @@
             </div>
         </div>
     </header>
-    
     <main>
         <div class="catalogue-menu">
             <div class="catalogue-item">
@@ -327,7 +329,7 @@
                         <img src="images/home_icon.png" alt="Home">
                     </a>
                     <span class="separator"></span>
-                    <span class="category-title">Laptops</span>
+                    <span class="category-title">Accesories</span>
                 </div>
 
                 <div class="sort-select">
@@ -371,17 +373,17 @@
 
             <div class="filter-block">
                 <div class="filter-header">
-                    <h3 class="filter-title">Brend</h3>
+                    <h3 class="filter-title">Type</h3>
                     <button class="filter-toggle" aria-label="Згорнути/Розгорнути">
                         <span class="toggle-arrow"></span>
                     </button>
                 </div>
                 <div class="filter-content">
                     <label class="filter-item">
-                        <input type="checkbox" class="brand-checkbox" value="Apple">
+                        <input type="checkbox" class="brand-checkbox" value="cases">
                         <span class="custom-checkbox"></span>
                         <div class="filter-text-wrap">
-                            <span class="filter-text">Apple</span>
+                            <span class="filter-text">Cases</span>
                         </div>
                         <span class="filter-count">608</span>
                     </label>
@@ -389,10 +391,10 @@
 
                 <div class="filter-content">
                     <label class="filter-item">
-                        <input type="checkbox" class="brand-checkbox" value="ASUS">
+                        <input type="checkbox" class="brand-checkbox" value="chargers">
                         <span class="custom-checkbox"></span>
                         <div class="filter-text-wrap">
-                            <span class="filter-text">ASUS</span>
+                            <span class="filter-text">Chargers</span>
                         </div>
                         <span class="filter-count">144</span>
                     </label>
@@ -400,10 +402,10 @@
 
                 <div class="filter-content">
                     <label class="filter-item">
-                        <input type="checkbox" class="brand-checkbox" value="Acer">
+                        <input type="checkbox" class="brand-checkbox" value="cables">
                         <span class="custom-checkbox"></span>
                         <div class="filter-text-wrap">
-                            <span class="filter-text">Acer</span>
+                            <span class="filter-text">Cables</span>
                         </div>
                         <span class="filter-count">65</span>
                     </label>
@@ -411,10 +413,10 @@
 
                 <div class="filter-content">
                     <label class="filter-item">
-                        <input type="checkbox" class="brand-checkbox" value="Lenovo">
+                        <input type="checkbox" class="brand-checkbox" value="powerBanks">
                         <span class="custom-checkbox"></span>
                         <div class="filter-text-wrap">
-                            <span class="filter-text">Lenovo</span>
+                            <span class="filter-text">Power banks</span>
                         </div>
                         <span class="filter-count">117</span>
                     </label>
@@ -422,10 +424,10 @@
 
                 <div class="filter-content">
                     <label class="filter-item">
-                        <input type="checkbox" class="brand-checkbox" value="HP">
+                        <input type="checkbox" class="brand-checkbox" value="externaldrives">
                         <span class="custom-checkbox"></span>
                         <div class="filter-text-wrap">
-                            <span class="filter-text">HP</span>
+                            <span class="filter-text">External drives</span>
                         </div>
                         <span class="filter-count">43</span>
                     </label>
@@ -433,10 +435,10 @@
 
                 <div class="filter-content">
                     <label class="filter-item">
-                        <input type="checkbox" class="brand-checkbox" value="Dell">
+                        <input type="checkbox" class="brand-checkbox" value="usbhubs">
                         <span class="custom-checkbox"></span>
                         <div class="filter-text-wrap">
-                            <span class="filter-text">Dell</span>
+                            <span class="filter-text">USB hubs</span>
                         </div>
                         <span class="filter-count">33</span>
                     </label>
@@ -444,10 +446,10 @@
 
                 <div class="filter-content">
                     <label class="filter-item">
-                        <input type="checkbox" class="brand-checkbox" value="MSI">
+                        <input type="checkbox" class="brand-checkbox" value="webcams">
                         <span class="custom-checkbox"></span>
                         <div class="filter-text-wrap">
-                            <span class="filter-text">MSI</span>
+                            <span class="filter-text">Webcams</span>
                         </div>
                         <span class="filter-count">8</span>
                     </label>
@@ -455,12 +457,34 @@
 
                 <div class="filter-content">
                     <label class="filter-item">
-                        <input type="checkbox" class="brand-checkbox" value="Gigabyte">
+                        <input type="checkbox" class="brand-checkbox" value="monitors">
                         <span class="custom-checkbox"></span>
                         <div class="filter-text-wrap">
-                            <span class="filter-text">Gigabyte</span>
+                            <span class="filter-text">Monitors</span>
                         </div>
-                        <span class="filter-count">53</span>
+                        <span class="filter-count">8</span>
+                    </label>
+                </div>
+
+                <div class="filter-content">
+                    <label class="filter-item">
+                        <input type="checkbox" class="brand-checkbox" value="keyboards">
+                        <span class="custom-checkbox"></span>
+                        <div class="filter-text-wrap">
+                            <span class="filter-text">Keyboards</span>
+                        </div>
+                        <span class="filter-count">8</span>
+                    </label>
+                </div>
+
+                <div class="filter-content">
+                    <label class="filter-item">
+                        <input type="checkbox" class="brand-checkbox" value="mice">
+                        <span class="custom-checkbox"></span>
+                        <div class="filter-text-wrap">
+                            <span class="filter-text">Mice</span>
+                        </div>
+                        <span class="filter-count">8</span>
                     </label>
                 </div>
             </div>
@@ -474,114 +498,18 @@
                 </div>
                 <div class="filter-content">
                     <div class="price-inputs">
-                        <input type="number" placeholder="549" class="price-input min-price" min="0">
+                        <input type="number" placeholder="2.99" class="price-input min-price" min="0">
                         <span class="price-separator">-</span>
-                        <input type="number" placeholder="4099" class="price-input max-price" min="0">
+                        <input type="number" placeholder="1299" class="price-input max-price" min="0">
                     </div>
                     <button class="apply-btn">APPLY</button>
-                </div>
-            </div>
-
-            <div class="filter-block">
-                <div class="filter-header">
-                    <h3 class="filter-title">Built-in memory</h3>
-                    <button class="filter-toggle" aria-label="Згорнути/Розгорнути">
-                        <span class="toggle-arrow"></span>
-                    </button>
-                </div>
-                <div class="filter-content">
-                    <div class="filter-grid">
-                        <label class="filter-grid-item">
-                            <input type="checkbox" class="memory-checkbox" value="256">
-                            <div class="grid-item-content">
-                                <span class="grid-item-text">256 GB</span>
-                                <span class="grid-item-count">2</span>
-                            </div>
-                        </label>
-                        
-                        <label class="filter-grid-item">
-                            <input type="checkbox" class="memory-checkbox" value="512">
-                            <div class="grid-item-content">
-                                <span class="grid-item-text">512 GB</span>
-                                <span class="grid-item-count">8</span>
-                            </div>
-                        </label>
-
-                        <label class="filter-grid-item">
-                            <input type="checkbox" class="memory-checkbox" value="1024">
-                            <div class="grid-item-content">
-                                <span class="grid-item-text">1 TB</span>
-                                <span class="grid-item-count">58</span>
-                            </div>
-                        </label>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="filter-block">
-                <div class="filter-header">
-                    <h3 class="filter-title">RAM</h3>
-                    <button class="filter-toggle" aria-label="Згорнути/Розгорнути">
-                        <span class="toggle-arrow"></span>
-                    </button>
-                </div>
-                <div class="filter-content">
-                    <div class="filter-grid">
-                        <label class="filter-grid-item">
-                            <input type="checkbox" class="ram-checkbox" value="4">
-                            <div class="grid-item-content">
-                                <span class="grid-item-text">4 GB</span>
-                                <span class="grid-item-count">1</span>
-                            </div>
-                        </label>
-                        
-                        <label class="filter-grid-item">
-                            <input type="checkbox" class="ram-checkbox" value="8">
-                            <div class="grid-item-content">
-                                <span class="grid-item-text">8 GB</span>
-                                <span class="grid-item-count">15</span>
-                            </div>
-                        </label>
-
-                        <label class="filter-grid-item">
-                            <input type="checkbox" class="ram-checkbox" value="16">
-                            <div class="grid-item-content">
-                                <span class="grid-item-text">16 GB</span>
-                                <span class="grid-item-count">20</span>
-                            </div>
-                        </label>
-
-                        <label class="filter-grid-item">
-                            <input type="checkbox" class="ram-checkbox" value="32">
-                            <div class="grid-item-content">
-                                <span class="grid-item-text">32 GB</span>
-                                <span class="grid-item-count">132</span>
-                            </div>
-                        </label>
-
-                        <label class="filter-grid-item">
-                            <input type="checkbox" class="ram-checkbox" value="64">
-                            <div class="grid-item-content">
-                                <span class="grid-item-text">64 GB</span>
-                                <span class="grid-item-count">133</span>
-                            </div>
-                        </label>
-
-                        <label class="filter-grid-item">
-                            <input type="checkbox" class="ram-checkbox" value="128">
-                            <div class="grid-item-content">
-                                <span class="grid-item-text">128 GB</span>
-                                <span class="grid-item-count">338</span>
-                            </div>
-                        </label>
-                    </div>
                 </div>
             </div>
         </aside>
         
         <section class="products-container">
             <div class="product-content">
-                <div class="products-grid" id="products-grid" data-page-category="laptops"></div>
+                <div class="products-grid" id="products-grid" data-page-category="accesories"></div>
             </div>
         </section>
         </div>
