@@ -150,7 +150,6 @@ const products = [
     { id: 709, category: "accesories", brand: "monitors", name: "Samsung Odyssey OLED G8 34\" 240Hz", newPrice: 1199.99, oldPrice: 1399.99, discount: "-200$", img: "images/sams_mon.avif", onSale: true, condition: "new", popularity: 96 }
 ];
 
-
 function lang_menu() {
     const select = document.getElementById('language');
     const wrapper = document.querySelector('.language-selection');
@@ -256,6 +255,25 @@ function showToast(text) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    const searchBtn = document.getElementById('search-submit');
+    if (searchBtn) {
+        searchBtn.addEventListener('click', () => {
+            const query = document.getElementById('search-input').value.trim();
+            if (query) {
+                window.location.href = `search.html?q=${encodeURIComponent(query)}`;
+            }
+        });
+    }
+
+    document.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter' && e.target.id === 'search-input') {
+            const query = e.target.value.trim();
+            if (query) {
+                window.location.href = `search.html?q=${encodeURIComponent(query)}`;
+            }
+        }
+    });
+
     const gridElement = document.getElementById('products-grid');
     let currentCategory = gridElement ? gridElement.dataset.pageCategory : null;
     let currentSort = 'popular';
@@ -342,25 +360,30 @@ document.addEventListener('DOMContentLoaded', () => {
         const urlParams = new URLSearchParams(window.location.search);
         const categoryFromUrl = urlParams.get('category');
         const brandFromUrl = urlParams.get('brand');
+        const searchQuery = urlParams.get('q'); // Получаем поисковый запрос
 
-        if (categoryFromUrl || brandFromUrl) {
-            // При переходе из главного меню сбрасываем старые фильтры
+        if (categoryFromUrl || brandFromUrl || searchQuery) {
             localStorage.removeItem('phoneFilters');
             
-            // ВАЖНО: Обновляем категорию, ТОЛЬКО если она есть в URL. 
-            // Иначе оставляем ту, что прочитали из HTML (data-page-category)
-            if (categoryFromUrl) {
+            // Если есть поисковый запрос
+            if (searchQuery) {
+                currentCategory = null; // Сбрасываем категорию, ищем везде
+                const searchTitle = document.getElementById('search-title');
+                if (searchTitle) searchTitle.textContent = `Results for: "${searchQuery}"`;
+                
+                // Сохраняем запрос в глобальную переменную (объяви её в начале файла)
+                window.currentSearch = searchQuery.toLowerCase();
+            } else if (categoryFromUrl) {
                 currentCategory = categoryFromUrl;
             }
 
-            // Сбрасываем и устанавливаем чекбоксы брендов
+            // Бренды
             document.querySelectorAll('.brand-checkbox').forEach(cb => cb.checked = false);
             if (brandFromUrl) {
                 const targetCheckbox = document.querySelector(`.brand-checkbox[value="${brandFromUrl}"]`);
                 if (targetCheckbox) targetCheckbox.checked = true;
             }
 
-            // Очищаем URL, чтобы он стал красивым
             const cleanUrl = window.location.origin + window.location.pathname;
             window.history.replaceState({}, '', cleanUrl);
         }
@@ -495,9 +518,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (productsToRender.length === 0) {
             grid.innerHTML = `
                 <div class="no-results">
-                    <img src="images/search_icon.png" alt="Ничего не найдено" class="no-results-image">
+                    <img src="images/search_icon.png" alt="Nothing found" class="no-results-image">
                     <h3>Oops, nothing found</h3>
-                    <p>There are no products matching your search criteria. Try changing your filters.</p>
+                    <p>There are no products matching your search criteria. Try changing your search query or filters.</p>
                     <button class="reset-filters-btn">Clear filters</button>
                 </div>
             `;
@@ -599,6 +622,10 @@ document.addEventListener('DOMContentLoaded', () => {
             // 1. Проверка категории (ВАЖНО: если currentCategory пустой, показываем все товары)
             const matchCategory = !currentCategory || product.category === currentCategory;
 
+            const matchSearch = !window.currentSearch || 
+                        product.name.toLowerCase().includes(window.currentSearch) || 
+                        product.brand.toLowerCase().includes(window.currentSearch);
+            
             // 2. Остальные фильтры
             const matchBrand = checkedBrands.length === 0 || checkedBrands.includes(product.brand);
             const matchSale = !isSaleOnly || product.onSale === true;
@@ -617,7 +644,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             // Добавляем matchCategory в итоговый результат
-            return matchCategory && matchBrand && matchSale && matchPrice && matchMemory && matchRam && matchBattery;
+            return matchCategory && matchSearch && matchBrand && matchSale && matchPrice && matchMemory && matchRam && matchBattery;
         });
 
         // Сортировка (оставляем как было)
